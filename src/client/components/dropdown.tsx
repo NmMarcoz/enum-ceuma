@@ -3,7 +3,7 @@ import { useState } from "react";
 interface params {
   text: string;
   icon: string;
-  options: Array<{ id: number; value: string }>;
+  options: Array<{ id: number; sizes: string }>;
 }
 export const DropDownButton = (props: params) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +17,7 @@ export const DropDownButton = (props: params) => {
   return (
     <button className="w-70 ml-12 h-16 bg-white rounded-[10px]">
       <div className="flex justify-center items-center text-center">
-        <p className="text-[#5C5F62] text-[24px]  mb-0">
+        <p className="text-[#5C5F62] text-[22px]  mb-0">
           {placeholder}
         </p>
         <span className="pl-60 absolute w-90 block" onClick={() => toggleIsOpen()}>
@@ -37,12 +37,12 @@ export const DropDownButton = (props: params) => {
                   className="list-none not-visited:bg-white flex items-center gap-2  p-4 hover:bg-[#936bc3] text-[20px] hover:text-[14px] text-[#5C5F62] hover:text-white transition-all duration-200`"
                   key={option.id}
                   onClick={()=>{
-                    handlePLaceholder(option.value);
+                    handlePLaceholder(option.sizes);
                     toggleIsOpen();
                   }}
                 >
                   <span className="w-[100%] py-2">
-                    {option.value}
+                    {option.sizes}
                   </span>
                 </li>
               ))}

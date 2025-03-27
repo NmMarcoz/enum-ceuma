@@ -5,14 +5,9 @@ import dropDownIcon from "./assets/drop-down.png";
 import { DropDownButton } from "./components/dropdown";
 import { Button } from "./components/button";
 import { useEffect, useState } from "react";
-import { getSizes } from "../infra/services/sizesService";
+
 import axios from "axios";
 
-const mocked = [
-  { id: 1, value: "pequena" },
-  { id: 2, value: "grande" },
-  { id: 1, value: "extra grande" },
-];
 
 
 function App() {
@@ -22,12 +17,14 @@ const [sizes, setSizes] = useState([]);
 const handleSizes = (sizes:[])=>{
   setSizes(sizes);
 }
+
   useEffect(()=>{
     axios.get("http://localhost:3000/sizes").then(response=>{
       console.log(response.data);
       handleSizes(response.data.data)
       return
     }).catch((err)=>{
+      handleSizes([]);
       console.log("erro ao buscar sizes", err);
     });
   },[])
@@ -52,7 +49,7 @@ Confira o exemplo ao lado."
           <img src={tshirt} alt="blue-tshirt"></img>
           <div className="flex">
             <DropDownButton
-              text="tamanho"
+              text={"tamanho"}
               icon={dropDownIcon}
               options={sizes}
             />

@@ -37,7 +37,13 @@ DATABASE_URL=mysql://USER:SENHA@HOST:PORT/NOME_DO_SCHEMA
 - Caso tudo dê certo você poderá observar no terminal as alterações no banco de dados.
 
 ### 4 - Rodando o site
-- Com tudo configurado, basta executar o comando no terminal:
+- Com tudo configurado, precisamos rodar o projeto agora:
+- Certifique-se de ter as portas 5173 e 3000 livres.
+- Primeiro, vamos iniciar a API, pois ela que usa a ORM para poder acessar o banco de dados. Basta digitar:
+```bash
+bun server
+```
+- Com a api rodando, basta iniciar o site agora. Execute:
 ```bash
 bun dev
 ```

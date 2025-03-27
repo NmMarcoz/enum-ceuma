@@ -1,0 +1,1 @@
+INSERT INTO size_table (sizes) VALUES ('pequena'), ('extra grande') , ('grande')

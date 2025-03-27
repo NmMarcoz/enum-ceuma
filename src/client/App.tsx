@@ -35,7 +35,7 @@ const handleSizes = (sizes:[])=>{
           <h1 className="text-6xl font-black mb-4">ENUM</h1>
           <Section
             title="Definição"
-            text="Semelhante ao tipo de dados das linguagens sucintas da Orientação a Objetos, o tipo ENUM também existe como uma implementação direta no Banco de Dados. 
+            text="Semelhante ao tipo de dados das linguagens do paradigma orientado a objetos, o tipo ENUM também existe como uma implementação direta no Banco de Dados. 
 Sua função é restringir, a determinada lista de valores, o valor que o dado irá receber. 
 Como definição, temos que um enum é um conjunto de constantes pré definidas."
           />
